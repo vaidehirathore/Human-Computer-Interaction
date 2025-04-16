@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HCI Technologies Report</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-6">
+  <h1 class="text-4xl font-bold text-center mb-10">Ethical, Social, and Cultural Implications of Emerging HCI Technologies</h1>
+
+  <div class="bg-white shadow-lg rounded-2xl p-6 mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Introduction</h2>
+    <p>
+      Human-Computer Interaction (HCI) technologies are reshaping how people engage with machines. As these systems become smarter and more embedded in our lives, we must address their ethical, social, and cultural consequences.
+    </p>
+  </div>
+
+  <div class="bg-white shadow-lg rounded-2xl p-6 mb-8">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/HCI_researchers.jpg/640px-HCI_researchers.jpg" alt="HCI researchers" class="w-full rounded-xl mb-4">
+    <h2 class="text-2xl font-semibold mb-4">What is HCI?</h2>
+    <p>
+      Human-Computer Interaction is the study and design of interfaces that facilitate interaction between humans and computers. It combines computer science, cognitive psychology, and design to enhance user experiences.
+    </p>
+  </div>
+
+  <div class="bg-white shadow-lg rounded-2xl p-6 mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Ethical Implications</h2>
+    <p>
+      Issues like data privacy, algorithmic bias, and manipulation through persuasive design raise serious ethical concerns. Transparent practices and accountability mechanisms are necessary.
+    </p>
+  </div>
+
+  <div class="bg-white shadow-lg rounded-2xl p-6 mb-8">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/User_Experience_Research_in_HCI.jpg/640px-User_Experience_Research_in_HCI.jpg" alt="UX Research" class="w-full rounded-xl mb-4">
+    <h2 class="text-2xl font-semibold mb-4">Social Implications</h2>
+    <p>
+      HCI transforms communication, work culture, and education. It can either promote inclusivity or deepen divides if not designed with empathy and accessibility in mind.
+    </p>
+  </div>
+
+  <div class="bg-white shadow-lg rounded-2xl p-6 mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Cultural Implications</h2>
+    <p>
+      Emerging tech often reflects dominant cultures. Designing systems for a global audience requires cultural sensitivity to avoid homogenization and marginalization.
+    </p>
+  </div>
+
+  <div class="bg-white shadow-lg rounded-2xl p-6 mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Impact Analysis</h2>
+    <canvas id="impactChart" width="400" height="200"></canvas>
+  </div>
+
+  <div class="bg-white shadow-lg rounded-2xl p-6 mb-8">
+    <h2 class="text-2xl font-semibold mb-4">User Trust vs. Tech Complexity</h2>
+    <canvas id="trustChart" width="400" height="200"></canvas>
+  </div>
+
+  <div class="bg-white shadow-lg rounded-2xl p-6 mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Key Recommendations</h2>
+    <ul class="list-disc list-inside">
+      <li>Adopt ethics-by-design from the start of development.</li>
+      <li>Promote inclusive and accessible user experiences.</li>
+      <li>Encourage global collaboration for HCI standards.</li>
+      <li>Enhance public awareness of data privacy.</li>
+    </ul>
+  </div>
+
+  <div class="text-center">
+    <button class="mt-4 px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg">
+      Download Report PDF
+    </button>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('impactChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Ethics', 'Social', 'Cultural'],
+        datasets: [{
+          label: 'Impact Level',
+          data: [8, 7, 6],
+          backgroundColor: '#3b82f6',
+          borderRadius: 5
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          tooltip: { enabled: true },
+          legend: { display: false }
+        },
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+
+    const trustCtx = document.getElementById('trustChart').getContext('2d');
+    new Chart(trustCtx, {
+      type: 'line',
+      data: {
+        labels: ['Low', 'Medium', 'High'],
+        datasets: [{
+          label: 'User Trust vs. Tech Complexity',
+          data: [9, 6, 3],
+          fill: false,
+          borderColor: '#10b981',
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          tooltip: { enabled: true },
+          legend: { display: true }
+        },
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+  </script>
+</body>
+</html>
